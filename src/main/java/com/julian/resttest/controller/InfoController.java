@@ -1,7 +1,6 @@
 package com.julian.resttest.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.julian.resttest.json.InfoJson;
@@ -10,7 +9,7 @@ import com.julian.resttest.json.InfoJson;
 public class InfoController {
 
 	@RequestMapping("/info")
-    public InfoJson greeting(@RequestParam(value="name", defaultValue="World") String name) {
+    public InfoJson info() {
         
 		InfoJson info = new InfoJson();
 		info.setNombre("Julian");
