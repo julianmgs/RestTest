@@ -19,22 +19,13 @@
   
   <dependencies>
 	
-	<!-- Servlet+JSP+JSTL -->
+	<!-- Servlet -->
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
     </dependency>
-    <!-- 
-    <dependency>
-        <groupId>javax.servlet.jsp</groupId>
-        <artifactId>javax.servlet.jsp-api</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>jstl</artifactId>
-    </dependency>
-    -->
 	
+	<!-- Spring MVC -->
   	<dependency>
   		<groupId>org.springframework</groupId>
   		<artifactId>spring-webmvc</artifactId>
@@ -51,7 +42,6 @@
 		<artifactId>slf4j-log4j12</artifactId>
 		<scope>runtime</scope>
 	</dependency>
-
 	<dependency>
 		<groupId>log4j</groupId>
 		<artifactId>log4j</artifactId>
@@ -76,6 +66,7 @@
 		<scope>runtime</scope>
 	</dependency>
 	
+	<!-- JSON databinding -->
 	<dependency>
 	    <groupId>com.fasterxml.jackson.core</groupId>
 	    <artifactId>jackson-databind</artifactId>
@@ -129,13 +120,6 @@
                 </executions>
             </plugin>
         </plugins>
-        <!-- 
-	    <resources>
-	        <resource>
-	            <directory>src/main/resources/prod</directory>           
-	        </resource>
-	    </resources>
-	    -->
         <finalName>RestTest</finalName>
     </build>
 </project>
