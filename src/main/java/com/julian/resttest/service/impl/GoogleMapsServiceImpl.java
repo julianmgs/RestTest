@@ -11,12 +11,15 @@ import org.springframework.stereotype.Service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.maps.DirectionsApi;
+import com.google.maps.DistanceMatrixApi;
 import com.google.maps.GeoApiContext;
 import com.google.maps.GeocodingApi;
 import com.google.maps.errors.ApiException;
 import com.google.maps.model.DirectionsResult;
+import com.google.maps.model.DistanceMatrix;
 import com.google.maps.model.GeocodingResult;
 import com.google.maps.model.LatLng;
+import com.google.maps.model.TravelMode;
 import com.julian.resttest.json.DistanciaJson;
 import com.julian.resttest.service.GoogleMapsService;
 
@@ -67,6 +70,30 @@ public class GoogleMapsServiceImpl implements GoogleMapsService {
             return json;
             //return gson.toJson(result);
         
+        } catch (ApiException | InterruptedException | IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    @Override
+    public String getDistanceMatrix() {
+        
+        try {
+            
+            DistanceMatrix result = DistanceMatrixApi.newRequest(geoApiContext)
+                    .origins(new LatLng(-32.944371, -60.637271), // Lea
+                             new LatLng(-32.954129, -60.651661), // Julian
+                             new LatLng(-32.961817, -60.639201)) // Facu
+                    .destinations(new LatLng(-32.954129, -60.651661), // Julian
+                                  new LatLng(-32.961817, -60.639201)) // Facu
+                    .mode(TravelMode.DRIVING)
+                    .await();
+            
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            
+            return gson.toJson(result);
+            
         } catch (ApiException | InterruptedException | IOException e) {
             e.printStackTrace();
             return null;

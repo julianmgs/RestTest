@@ -35,4 +35,10 @@ public class GoogleMapsController {
                                          Double.parseDouble(to[0]), 
                                          Double.parseDouble(to[1]));
     }
+    
+    @RequestMapping(value = "/dmatrix", produces = "application/json; charset=utf-8")
+    public String distanceMatrix() {
+        
+        return gMapsService.getDistanceMatrix();
+    }
 }

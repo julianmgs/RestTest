@@ -7,4 +7,6 @@ public interface GoogleMapsService {
     String getMapsJson();
     
     DistanciaJson getDistancia(double latFrom, double lonFrom, double latTo, double lonTo);
+
+    String getDistanceMatrix();
 }
