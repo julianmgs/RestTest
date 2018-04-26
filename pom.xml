@@ -31,39 +31,10 @@
   		<artifactId>spring-webmvc</artifactId>
   	</dependency>
   	
-  	<!-- Logging -->
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>jcl-over-slf4j</artifactId>
-		<scope>runtime</scope>
-	</dependency>
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-log4j12</artifactId>
-		<scope>runtime</scope>
-	</dependency>
+	<!-- Log4j -->
 	<dependency>
 		<groupId>log4j</groupId>
 		<artifactId>log4j</artifactId>
-		<exclusions>
-			<exclusion>
-				<groupId>javax.mail</groupId>
-				<artifactId>mail</artifactId>
-			</exclusion>
-			<exclusion>
-				<groupId>javax.jms</groupId>
-				<artifactId>jms</artifactId>
-			</exclusion>
-			<exclusion>
-				<groupId>com.sun.jdmk</groupId>
-				<artifactId>jmxtools</artifactId>
-			</exclusion>
-			<exclusion>
-				<groupId>com.sun.jmx</groupId>
-				<artifactId>jmxri</artifactId>
-			</exclusion>
-		</exclusions>
-		<scope>runtime</scope>
 	</dependency>
 	
 	<!-- JSON databinding -->
@@ -71,6 +42,37 @@
 	    <groupId>com.fasterxml.jackson.core</groupId>
 	    <artifactId>jackson-databind</artifactId>
 	</dependency>
+	
+    <!-- JSoup -->
+	<dependency>
+        <groupId>org.jsoup</groupId>
+        <artifactId>jsoup</artifactId>
+        <version>1.8.3</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+    </dependency>
+    
+    <!--  -->
+	<dependency>
+	    <groupId>commons-lang</groupId>
+	    <artifactId>commons-lang</artifactId>
+	</dependency>
+	
+	<!-- Google Maps API -->
+	<dependency>
+	    <groupId>com.google.maps</groupId>
+	    <artifactId>google-maps-services</artifactId>
+	    <version>0.2.7</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-nop</artifactId>
+	    <version>1.7.25</version>
+	</dependency>
+	
   </dependencies>
   
   <build>
